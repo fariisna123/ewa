@@ -1,10 +1,12 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: backend
 
 steps:
-- name: greeting
-  image: golang:1.12
+- name: run tests
+  image: python:3.11
   commands:
-  - lscpu
+  - pip install poetry
+  - poetry install
+  - poetry run pytest
