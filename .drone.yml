@@ -1,16 +1,10 @@
 ---
 kind: pipeline
 type: docker
-name: Building
-node:
-  drone: bzkg9
-trigger:
-  event:
-    include:
-      - tag
+name: default
+
 steps:
-  - name: build alpine
-    image: golang
-    commands:
-        - lscpu
-        - linux/arm64
+- name: greeting
+  image: golang:1.12
+  commands:
+  - ls
