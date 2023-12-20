@@ -10,11 +10,7 @@ trigger:
       - tag
 steps:
   - name: build alpine
-    image: thegeeklab/drone-docker-buildx:23
-    privileged: true
-    settings:
-      username: smartinfrasolutions
-      dockerfile: Dockerfile-alpine
-      platforms:
-        - linux/amd64
+    image: golang
+    commands:
+        - lscpu
         - linux/arm64
